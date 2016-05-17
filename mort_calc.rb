@@ -9,7 +9,7 @@ def valid_num?(num)
 end
 
 prompt("Welcome to the Mortgage Payment Calculator")
-
+loop do
 loan = ""
 loop do
   prompt("What is the loan amount?")
@@ -45,8 +45,13 @@ mir = apr/1200
 llm = y_dur*12
 mp = loan*(mir*(1 + mir)**llm)/((1 + mir)**llm - 1)
 
-puts ("Monthly payment is #{mp}")
+puts ("Monthly payment is #{format('%.2f',mp)}")
 
+puts ("Would you like to try again? y or n?")
+try = gets.chomp
+break unless try.downcase.start_with?('y')
+
+end
 
 
 
