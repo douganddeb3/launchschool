@@ -45,7 +45,7 @@ mir = apr/1200
 llm = y_dur*12
 mp = loan*(mir*(1 + mir)**llm)/((1 + mir)**llm - 1)
 
-puts ("Monthly payment is #{format('%.2f',mp)}")
+puts ("Monthly payment is #{format('%10.2f',mp)}")
 
 puts ("Would you like to try again? y or n?")
 try = gets.chomp
