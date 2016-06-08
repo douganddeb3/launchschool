@@ -1,0 +1,172 @@
+1)
+Because the variable str is initialized outside of the loop, str is 
+accessible outside the loop once the loop completes.
+Reassignment of the variable str occurs inside the loop. This means 
+that str no longer is a pointer to 1. It beomes a pointer to 2. For
+this reason the loop is considered to be destructive.
+
+2)
+str is first declared inside the loop, and therefore this str
+variable is local to the loop and not recognized outside
+the loop. str is undeclared outside of the loop.
+
+3)
+No
+This snippet of code will throw an exception if str is not first
+initialized before the loop starts.
+
+4)
+This code raises an exception because str is a variable outside
+the scope of the method and therefore is unrecognized by the
+method.
+
+5)
+Inside the method, str is a different variable with a a different
+scope than the str variable outside the method. Therefore,
+altering the variable inside the method makes no changes to the
+variable outside the method.
+
+6)
+a and b are pointers. They are not the actual values. The pointers
+point to the value. When a is reassigned to equal "hi", a then
+points to "hi" in the memory, but b is unaltered. b still points
+to "hello".
+
+7)
+There are 4 variables a, b, c, and d and 2 objects: the
+string objects "hello" and "world". Only 4 new variables are 
+created, on the left hand side of the equals sign. Setting
+b = a or a = c changes what what the pointers point to but
+do not create new objects. The objects already exist.
+
+Mutating Method Arguments:
+1)
+Within the change method, a new object param + "world" is
+created, but there has been no assignment or reassignment.
+This is not a destructive method. The variable greeting
+was declared outside the method and passed into the method,
+but it was never altered. The value of greeting was never 
+changed.
+
+2)
+the variable greeting is passed into the change method.
+The << operator is a destructive operator, meaning that
+it actually alters the value of the variable referred to
+by the variable. The << operator also concatenates to the
+original value.
+
+3)
+Within the change method, the assignment param = "hi" creates
+a an entirely new object without altering the greeting object
+that was passed into it. Though param, after the method call,
+will refer to "hi world", greeting was not assigned to the
+return value.
+
+4)
+greeting is not assigned to the return value of 
+change(greeting). greeting is outside the scope of the
+change method, and therefore remains unchanged.
+
+
+Working with Collections:
+
+1) 
+Array#map returns a new array when called. Array#map does not
+alter the array on which it was called. Array#map takes as
+arguments each element of the array, and, depending on the
+block of code expressed, creates a new array with the elements
+created by the block of code, such as adding something to the
+element. The original array remains
+unchanged.
+
+2) 
+Array#select works on each element of the array upon which
+it is called and returns a new array based on whether or
+not the element meets the comparison operator in the block of 
+code. The origianl array is unchanged.
+
+3)
+While both methods return the same array, and do not alter
+the original array, the block in [1, 2, 3].map {|n| n += 1}
+does an assignment, creating a new object, which is unnecessary.
+
+4)
+Array#map creates a return value for every single element of
+the array upon which it is called. It has a return value for
+every element in the array and creates a new array wherein for
+every element in the original array, there is an element in
+the new array. n > 2 either returns true or false based on n.
+
+5)
+puts always returns nil and the last line of the code in the 
+block is the one used as the return value. Here, by putting
+puts n in the code, n > 2 has no effect on the mapping. Every
+element of the array is mapped to nil.
+
+6)
+n + 2 would be an integer, neither false nor true. However,
+ruby considers anything besides false and nil as true when
+supplied to an expression expecting a boolean answer. 
+Therefore, every element is considered true and thus
+selected as having met the select criteria.
+
+7)
+puts returns nil and arr becomes an empty array []
+because nil always evaluates to false in a boolean context.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
